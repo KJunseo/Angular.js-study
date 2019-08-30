@@ -3,24 +3,22 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header.component';
-import { FooterComponent } from './footer/footer.component';
-import { SectionComponent } from './section/section.component';
-import { TimeDisplayComponent } from './section/time-display/time-display.component';
-import { ButtonsComponent } from './section/buttons/buttons.component';
+
+import { LayoutModule } from './layout/layout.module';
+import { SectionModule } from './section/section.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    HeaderComponent,
-    FooterComponent,
-    SectionComponent,
-    TimeDisplayComponent,
-    ButtonsComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    SectionModule,
+    LayoutModule
+  ],
+  exports: [    //AppComponent를 다른 모듈들이 사용할 수 있도록 만들어준다.
+    AppComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
